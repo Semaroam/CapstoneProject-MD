@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/secondary"
+    tools:context=".view.profil.ProfileActivity">
+
+
+    <View
+        android:id="@+id/top_view_profile"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/bg_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/profcard_view"
+        android:layout_width="265dp"
+        android:layout_height="201dp"
+        android:background="@drawable/bg_all_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.186" />
+
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="92dp"
+        android:layout_height="91dp"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="@+id/profcard_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/profcard_view"
+        app:layout_constraintVertical_bias="0.281" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/profcard_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.246" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/baseline_arrow_back_24"
+        android:contentDescription="@string/back"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bangkit2024"
+        app:layout_constraintBottom_toBottomOf="@+id/profcard_view"
+        app:layout_constraintEnd_toEndOf="@+id/profcard_view"
+        app:layout_constraintStart_toStartOf="@+id/profcard_view"
+        app:layout_constraintTop_toBottomOf="@+id/top_view"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bangkitacademy2024"
+        android:textColor="@color/gray"
+        app:layout_constraintBottom_toBottomOf="@+id/profcard_view"
+        app:layout_constraintEnd_toEndOf="@+id/profcard_view"
+        app:layout_constraintStart_toStartOf="@+id/profcard_view"
+        app:layout_constraintTop_toBottomOf="@+id/top_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
