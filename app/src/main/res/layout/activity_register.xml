@@ -25,7 +25,6 @@
                 android:id="@+id/imageView"
                 android:layout_width="183dp"
                 android:layout_height="194dp"
-                android:layout_alignBottom="@+id/top_view"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"

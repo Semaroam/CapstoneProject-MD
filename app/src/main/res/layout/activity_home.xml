@@ -4,25 +4,32 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    android:background="@color/white">
+    android:background="@color/secondary">
 
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         android:layout_width="match_parent"
         app:strokeColor="@color/primary"
-        android:layout_height="300dp"
+        android:layout_height="240dp"
         app:shapeAppearanceOverlay="@style/CustomCardShape"
         android:backgroundTint="@color/primary">
 
-
     </com.google.android.material.card.MaterialCardView>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center">
 
-        android:layout_marginTop="-30dp"
-        android:background="@color/white"
-        android:hint="khghggh" />
+    <View
+        android:id="@+id/search_bar"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_all_rounded"
+        android:layout_marginTop="220dp">
+    </View>
+
+</RelativeLayout>
+
 </RelativeLayout>
