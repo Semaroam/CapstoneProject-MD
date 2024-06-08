@@ -21,11 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="183dp"
             android:layout_height="194dp"
-            android:layout_alignBottom="@+id/top_view"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
@@ -34,7 +34,8 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="65dp"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo">
+        </ImageView>
 
             <TextView
                 android:layout_width="match_parent"
@@ -46,7 +47,8 @@
                 android:text="@string/sign_in"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold">
+            </TextView>
         </RelativeLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -119,4 +121,6 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+
 </RelativeLayout>
