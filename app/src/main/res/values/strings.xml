@@ -11,12 +11,18 @@
     <string name="already_sign_up">sudah punya akun?</string>
     <string name="name">Nama</string>
     <string name="hi">Hai</string>
+    <string name="year">2024</string>
+    <string name="version">V-0.0.0</string>
+    <string name="about">Tentang</string>
+    <string name="myactivity">Aktivitasku</string>
     <string name="explore">Jelajahi</string>
     <string name="detail">Detail</string>
     <string name="desc1">Kami telah merekomendasikan tempat tempat terbaik untuk anda, lihatlah dan jelajahi.</string>
     <string name="highlight">Highlight Event</string>
     <string name="welcome_message">Welcome to Home!</string>
     <string name="back">Go back</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
