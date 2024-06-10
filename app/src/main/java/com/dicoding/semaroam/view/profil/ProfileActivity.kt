@@ -1,21 +1,34 @@
 package com.dicoding.semaroam.view.profil
 
+import android.annotation.SuppressLint
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.dicoding.semaroam.R
 
 class ProfileActivity : AppCompatActivity() {
+    private lateinit var nameTextView: TextView
+    private lateinit var usernameTextView: TextView
+    private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_profile)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
+        nameTextView = findViewById(R.id.textView2)
+        usernameTextView = findViewById(R.id.textView3)
+        sharedPreferences = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+        loadUserData()
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun loadUserData() {
+        val name = sharedPreferences.getString("user_name", "Unknown")
+        val username = sharedPreferences.getString("user_username", "Unknown")
+
+        nameTextView.text = name
+        usernameTextView.text = "@$username"
     }
 }
