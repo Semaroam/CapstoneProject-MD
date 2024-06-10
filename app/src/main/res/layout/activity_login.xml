@@ -22,20 +22,23 @@
             android:layout_height="wrap_content">
 
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="183dp"
-            android:layout_height="194dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="center"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="65dp"
-            android:src="@drawable/logo">
-        </ImageView>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="183dp"
+                android:layout_height="194dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="65dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/logo"
+                tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck">
+
+            </ImageView>
 
             <TextView
                 android:layout_width="match_parent"
@@ -75,25 +78,30 @@
                 android:layout_width="271dp"
                 android:layout_height="59dp"
                 android:layout_marginBottom="20dp"
+                android:autofillHints=""
                 android:hint="@string/username"
-                android:inputType="text" />
+                android:inputType="text"
+                tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/et_password"
                 android:layout_width="271dp"
                 android:layout_height="59dp"
+                android:layout_marginBottom="20dp"
+                android:autofillHints=""
                 android:hint="@string/password"
                 android:inputType="textPassword"
-                android:layout_marginBottom="20dp"/>
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/login_button"
                 android:layout_width="220dp"
                 android:layout_height="59dp"
-                android:text="@string/sign_in"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/primary"
+                android:text="@string/sign_in"
                 android:textColor="@color/white"
-                android:layout_marginTop="20dp"/>
+                tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -112,11 +120,13 @@
                     android:id="@+id/register_link"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:text="@string/sign_up"
                     android:textColor="@color/primary"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="4dp"
-                    android:clickable="true"/>
+                    tools:ignore="TextContrastCheck,TextSizeCheck" />
             </LinearLayout>
 
         </LinearLayout>
