@@ -1,4 +1,4 @@
-package com.dicoding.semaroam.view.profil
+package com.dicoding.semaroam.view.profile
 
 import android.annotation.SuppressLint
 import android.content.Intent

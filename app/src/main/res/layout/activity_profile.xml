@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/secondary"
-    tools:context=".view.profil.ProfileActivity">
+    tools:context=".view.profile.ProfileActivity">
 
     <View
         android:id="@+id/top_view_profile"
