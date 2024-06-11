@@ -74,18 +74,19 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun registerUser(name: String, username: String, password: String) {
+        Log.d("RegisterActivity", "Registering user with name: $name, username: $username, password: $password")
+
         val apiService = ApiConfig.getApiService()
         val signupRequest = SignupRequest(username, password, name)
 
         Log.d("RegisterActivity", "Sending signup request: $signupRequest")
-
         apiService.signupUser(signupRequest).enqueue(object : Callback<SignupResponse> {
             override fun onResponse(call: Call<SignupResponse>, response: Response<SignupResponse>) {
                 if (response.isSuccessful) {
                     val signupResponse = response.body()
                     Log.d("RegisterActivity", "Signup response received: $signupResponse")
                     if (signupResponse != null) {
-                        // Save user data to SharedPreferences
+
                         with(sharedPreferences.edit()) {
                             putString("user_name", signupResponse.data.nama)
                             putString("user_username", signupResponse.data.username)

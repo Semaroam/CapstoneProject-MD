@@ -64,6 +64,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginUser(username: String, password: String) {
+
+        Log.d("LoginActivity", "Logging in user with username: $username, password: $password")
+
         val apiService = ApiConfig.getApiService()
         val loginRequest = LoginRequest(username, password)
 
@@ -75,7 +78,10 @@ class LoginActivity : AppCompatActivity() {
                     val loginResponse = response.body()
                     Log.d("LoginActivity", "Login response received: $loginResponse")
                     if (loginResponse?.accessToken != null) {
-                        // Save user data to SharedPreferences
+                            with(sharedPreferences.edit()) {
+                            putString("access_token", loginResponse.accessToken)
+                            apply()
+                        }
                         loginResponse.data?.let { userData ->
                             with(sharedPreferences.edit()) {
                                 putString("user_name", userData.nama)
