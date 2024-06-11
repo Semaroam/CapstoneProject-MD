@@ -93,6 +93,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/profcard_view"
         app:layout_constraintEnd_toEndOf="@+id/profcard_view"
         app:layout_constraintStart_toStartOf="@+id/profcard_view"
-        app:layout_constraintTop_toBottomOf="@+id/top_view" />
+        app:layout_constraintTop_toBottomOf="@+id/top_view"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

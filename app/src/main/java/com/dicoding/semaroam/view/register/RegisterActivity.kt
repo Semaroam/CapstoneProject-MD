@@ -4,15 +4,12 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.dicoding.semaroam.R
 import com.dicoding.semaroam.data.retrofit.ApiConfig
 import com.dicoding.semaroam.data.retrofit.SignupRequest
 import com.dicoding.semaroam.data.retrofit.SignupResponse
+import com.dicoding.semaroam.databinding.ActivityRegisterBinding
 import com.dicoding.semaroam.view.login.LoginActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -20,26 +17,27 @@ import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var binding: ActivityRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
-
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         sharedPreferences = getSharedPreferences("user_pref", MODE_PRIVATE)
 
-        val registerButton: Button = findViewById(R.id.daftar_button)
-        val nameEditText: EditText = findViewById(R.id.et_name)
-        val usernameEditText: EditText = findViewById(R.id.et_username)
-        val passwordEditText: EditText = findViewById(R.id.et_password)
-        val signInLink: TextView = findViewById(R.id.signin_link)
+        val registerButton  = binding.daftarButton
+        val nameEditText = binding.etName
+        val usernameEditText = binding.etUsername
+        val passwordEditText = binding.etPassword
+        val signInLink = binding.signinLink
 
         registerButton.setOnClickListener {
-            val name = nameEditText.text.toString().trim()
-            val username = usernameEditText.text.toString().trim()
-            val password = passwordEditText.text.toString().trim()
+            val name = nameEditText.editText?.text.toString().trim()
+            val username = usernameEditText.editText?.text.toString().trim()
+            val password = passwordEditText.editText?.text.toString().trim()
 
             Log.d("RegisterActivity", "Register button clicked with name: $name, username: $username")
-
+            Log.d("daftarButton", "Register button clicked with password: ${binding.etName}")
             if (validateRegister(name, username, password)) {
                 registerUser(name, username, password)
             }

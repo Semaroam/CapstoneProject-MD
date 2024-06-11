@@ -32,4 +32,5 @@ class HomeActivity : AppCompatActivity() {
         val userName = sharedPreferences.getString("user_name", "User")
         hiUserTextView.text = getString(R.string.hi) + " " + userName
     }
+
 }

@@ -3,15 +3,12 @@ package com.dicoding.semaroam.view.login
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.dicoding.semaroam.R
 import com.dicoding.semaroam.data.retrofit.ApiConfig
 import com.dicoding.semaroam.data.retrofit.LoginRequest
 import com.dicoding.semaroam.data.retrofit.LoginResponse
+import com.dicoding.semaroam.databinding.ActivityLoginBinding
 import com.dicoding.semaroam.view.register.RegisterActivity
 import com.dicoding.semaroam.view.start.HomeActivity
 import retrofit2.Call
@@ -19,18 +16,21 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLoginBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val loginButton: Button = findViewById(R.id.login_button)
-        val usernameEditText: EditText = findViewById(R.id.et_username)
-        val passwordEditText: EditText = findViewById(R.id.et_password)
-        val signUpLink: TextView = findViewById(R.id.register_link)
+        val loginButton = binding.loginButton
+        val usernameEditText = binding.etUsername
+        val passwordEditText = binding.etPassword
+        val signUpLink = binding.registerLink
 
         loginButton.setOnClickListener {
-            val username = usernameEditText.text.toString().trim()
-            val password = passwordEditText.text.toString().trim()
+            val username = usernameEditText.editText?.text.toString().trim()
+            val password = passwordEditText.editText?.text.toString().trim()
 
             Log.d("LoginActivity", "Login button clicked with username: $username")
 
