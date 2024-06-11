@@ -77,7 +77,6 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun navigateToLogin() {
-        // Replace LoginActivity::class.java with the actual class of your login activity
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()

@@ -59,11 +59,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.246" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="50dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="16dp"
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/baseline_arrow_back_24"
         android:contentDescription="@string/back"
         app:layout_constraintEnd_toStartOf="@+id/textView"
