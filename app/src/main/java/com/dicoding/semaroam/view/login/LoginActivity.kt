@@ -1,17 +1,15 @@
 package com.dicoding.semaroam.view.login
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.dicoding.semaroam.R
 import com.dicoding.semaroam.data.retrofit.ApiConfig
 import com.dicoding.semaroam.data.retrofit.LoginRequest
 import com.dicoding.semaroam.data.retrofit.LoginResponse
+import com.dicoding.semaroam.databinding.ActivityLoginBinding
 import com.dicoding.semaroam.view.register.RegisterActivity
 import com.dicoding.semaroam.view.start.HomeActivity
 import retrofit2.Call
@@ -19,18 +17,24 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLoginBinding
+    private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val loginButton: Button = findViewById(R.id.login_button)
-        val usernameEditText: EditText = findViewById(R.id.et_username)
-        val passwordEditText: EditText = findViewById(R.id.et_password)
-        val signUpLink: TextView = findViewById(R.id.register_link)
+        sharedPreferences = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+        val loginButton = binding.loginButton
+        val usernameEditText = binding.etUsername
+        val passwordEditText = binding.etPassword
+        val signUpLink = binding.registerLink
 
         loginButton.setOnClickListener {
-            val username = usernameEditText.text.toString().trim()
-            val password = passwordEditText.text.toString().trim()
+            val username = usernameEditText.editText?.text.toString().trim()
+            val password = passwordEditText.editText?.text.toString().trim()
 
             Log.d("LoginActivity", "Login button clicked with username: $username")
 
@@ -60,6 +64,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginUser(username: String, password: String) {
+
+        Log.d("LoginActivity", "Logging in user with username: $username, password: $password")
+
         val apiService = ApiConfig.getApiService()
         val loginRequest = LoginRequest(username, password)
 
@@ -71,6 +78,17 @@ class LoginActivity : AppCompatActivity() {
                     val loginResponse = response.body()
                     Log.d("LoginActivity", "Login response received: $loginResponse")
                     if (loginResponse?.accessToken != null) {
+                            with(sharedPreferences.edit()) {
+                            putString("access_token", loginResponse.accessToken)
+                            apply()
+                        }
+                        loginResponse.data?.let { userData ->
+                            with(sharedPreferences.edit()) {
+                                putString("user_name", userData.nama)
+                                putString("user_username", userData.username)
+                                apply()
+                            }
+                        }
                         Toast.makeText(this@LoginActivity, loginResponse.message, Toast.LENGTH_SHORT).show()
                         val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                         startActivity(intent)

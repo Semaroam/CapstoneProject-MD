@@ -73,25 +73,34 @@
             android:background="@color/secondary"
             tools:context=".view.login.LoginActivity">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/et_username"
-                android:layout_width="271dp"
-                android:layout_height="59dp"
-                android:layout_marginBottom="20dp"
-                android:autofillHints=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="55dp"
                 android:hint="@string/username"
-                android:inputType="text"
-                tools:ignore="TextContrastCheck" />
+                android:layout_marginBottom="15dp">
 
-            <EditText
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/et_password"
-                android:layout_width="271dp"
-                android:layout_height="59dp"
-                android:layout_marginBottom="20dp"
-                android:autofillHints=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="55dp"
                 android:hint="@string/password"
-                android:inputType="textPassword"
-                tools:ignore="TextContrastCheck" />
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/login_button"

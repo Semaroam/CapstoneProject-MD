@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/secondary"
-    android:id="@+id/main">
+    android:id="@+id/main"
+    tools:context=".view.start.HomeActivity">
 
 
     <com.google.android.material.card.MaterialCardView
@@ -42,8 +43,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/ic_profile"
-            android:contentDescription="@string/profil"
-            tools:ignore="RtlHardcoded,TouchTargetSizeCheck">
+            tools:ignore="ContentDescription,RtlHardcoded,SpeakableTextPresentCheck,TouchTargetSizeCheck">
 
         </ImageButton>
 
@@ -73,19 +73,16 @@
 
         </TextView>
 
-        <View
+        <ImageButton
             android:id="@+id/search_bar"
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
             android:layout_marginStart="55dp"
             android:layout_marginTop="220dp"
             android:layout_marginEnd="56dp"
-            android:background="@drawable/bg_all_rounded">
-
-        </View>
+            android:background="@drawable/bg_all_rounded"
+            android:queryHint="@string/search_hint"
+            android:textColorHint="@color/primary"/>
 
     </RelativeLayout>
 
@@ -94,6 +91,7 @@
         android:layout_height="wrap_content"
         android:text="@string/highlight"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginTop="300dp"
         android:layout_marginStart="20dp"
         android:textSize="15sp">

@@ -8,7 +8,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.semaroam.R
-import com.dicoding.semaroam.view.profil.ProfileActivity
+import com.dicoding.semaroam.view.profile.ProfileActivity
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
@@ -32,4 +32,5 @@ class HomeActivity : AppCompatActivity() {
         val userName = sharedPreferences.getString("user_name", "User")
         hiUserTextView.text = getString(R.string.hi) + " " + userName
     }
+
 }
