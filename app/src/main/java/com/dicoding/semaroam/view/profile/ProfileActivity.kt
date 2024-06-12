@@ -12,6 +12,7 @@ import com.dicoding.semaroam.data.retrofit.ApiConfig
 import com.dicoding.semaroam.data.retrofit.AuthService
 import com.dicoding.semaroam.databinding.ActivityProfileBinding
 import com.dicoding.semaroam.view.login.LoginActivity
+import com.dicoding.semaroam.view.start.MainActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -77,7 +78,7 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun navigateToLogin() {
-        val intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
     }
